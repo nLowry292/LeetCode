@@ -4,13 +4,15 @@ class Solution:
         while index<n:
             count = 0
             subindex = index
-            seen = set()
+            seen = {} # character -> index
             while subindex<n and s[subindex] not in seen:
-                seen.add(s[subindex])
+                seen[s[subindex]] = subindex
                 count += 1
                 subindex += 1
             maxCount = max(maxCount, count)
-            index += 1
+            if subindex == n:
+                return maxCount
+            index = seen[s[subindex]]+1
         return maxCount
                 
             
