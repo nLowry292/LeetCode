@@ -24,7 +24,7 @@ class Solution:
         def backtrack(openN, closedN):
             if openN == closedN == n:
                 res.append("".join(stack))
-                return
+                #return
 
             if openN < n:
                 stack.append("(")
